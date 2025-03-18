@@ -1,0 +1,295 @@
+/* 轮播图部分 */
+.content {
+	/* display: flex; */
+	flex-direction: column;
+	align-items: center;
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+
+#item {
+	position: relative;
+	width: 1200px;
+	/* height: 100%; */
+	padding-left: 0px;
+	margin: 0px auto;
+}
+
+.item {
+	display: none;
+	transition: all 1s;
+}
+
+.item img {
+	width: 100%;
+	height: 100%;
+}
+
+.item.active {
+	display: block;
+}
+
+#btn-left {
+	display: none;
+}
+
+#btn-right {
+	display: none;
+}
+
+#circle {
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: -25px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 100;
+	/* background-color: aqua; */
+}
+
+.circle {
+	list-style: none;
+	width: 25px;
+	height: 6px;
+	/* border-radius: 10px; */
+	/* border: 2px solid white; */
+	background: rgba(161, 161, 161, 0.4);
+	cursor: pointer;
+	margin: 5px;
+	transition: 0.3s;
+}
+
+.circle:hover {
+	width: 30px;
+	height: 8px;
+	background: rgba(219, 219, 219, 0.4);
+}
+
+.white {
+	background-color: #eeeeee;
+}
+
+/* 简介部分 */
+.introduction {
+	/* margin-top: 100px; */
+	width: 1200px;
+	margin: 50px auto;
+	margin-bottom: 400px;
+	/* display: flex; */
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.introduction-title {
+	/* margin-left: 200px; */
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.introduction-content {
+	display: flex;
+}
+
+.introduction-content p {
+	min-width: 300px;
+	/* margin:20px 170px; */
+}
+
+
+/* 展示商品部分 */
+.display {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.display-item {
+	width: 320px;
+	height: 450px;
+	background-color: rgb(250, 252, 253);
+	margin: 0px 10px;
+	cursor: pointer;
+	transition: 0.3s;
+
+}
+
+.display-item:hover {
+	margin-bottom: 20px;
+	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+	transition: all .2s ease-in-out;
+}
+
+.display-item-img {
+	display: flex;
+	justify-content: center;
+}
+
+.display-item-img img {
+	width: 300px;
+	height: 200px;
+	margin: 10px auto;
+}
+
+.display-item-detial {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 10px 5px;
+}
+
+.detial-title {
+	font-size: 30px;
+	font-weight: 600;
+	padding-left: 5px;
+	cursor: pointer;
+}
+
+
+.detial-price,
+.detial-point {
+	font-weight: 600;
+	margin-top: 10px;
+	font-size: 16px;
+	margin-left: 60%;
+	cursor: pointer;
+}
+
+.detial-price,
+.detial-point,
+.detial-title {
+	transition: 0.3s;
+}
+
+.detial-price:hover {
+	color: rgba(73, 73, 73, 0.664);
+}
+
+.detial-point:hover {
+	color: rgba(73, 73, 73, 0.664);
+}
+
+.detial-title:hover {
+	color: rgba(73, 73, 73, 0.664);
+}
+
+/* 拼接卡片区域 */
+.splicing {
+	width: 100%;
+	height: 900px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.splicing-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.splicing-item-img {
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	margin: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+.splicing-item-img img {
+	width: 300px;
+	height: 100%;
+}
+.img-title{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 300px;
+	background: rgba(0, 0, 0, .25);
+	color: #ffffffc2;
+	font-size: 25px;
+	text-align:right;
+	vertical-align: bottom;
+	transition:  0.5s;
+}
+.img-title a{
+	position: absolute;
+	bottom: 40px;
+	right: 60px;
+}
+.splicing-bkg{
+	width: 350px;
+	height: 610px;
+	margin: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.splicing-bkg img{
+	width: 350px;
+	height: 100%;
+}
+.splicing-bkg:hover{
+	margin-bottom: 20px;
+	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+	transition: all .2s ease-in-out;
+}
+/* 邮件区域 */
+.email{
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+.email-title{
+	font-size: 30px;
+	font-weight: 600;
+	margin: 20px auto;
+}
+.email-content{
+	width: 500px;
+	font-size:20px;
+
+	margin:20px auto;
+}
+.email-input{
+	height: 40px;
+	width: 500px;
+	border: 1px solid rgb(0, 0, 0);
+	margin: 10px;
+}
+.email-submit{
+	background-color: #c45f5f;
+	width: 100px;
+	height: 40px;
+	border: 1px solid  #7c4646;
+	/* margin-right: 400px; */
+	cursor: pointer;
+	transition: 0.3s;
+}
+.email-submit:hover{
+	background-color: #df7272;
+}
+.search-div{
+
+width:100px;
+display: inline-block;
+}
+
+.search-form{
+display: inline-block;
+}
+
+.white_bg{
+	background: white !important;
+}
+
+.black_bg{
+	background: #000000 !important;
+	color:white !important;
+}

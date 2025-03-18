@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mohammad Sahragard">
+        <title>Responsive Profile Page</title>
+        <script src="{{ url_for('static', filename='app/changebtn2.js') }}"></script>
+        <!-- import css file (style.css) -->
+        <link rel="stylesheet" href="../static/css/profile.css">
+        <link rel="stylesheet" href="../static/css/main.css">
+            <link rel="stylesheet" href="../static/css/classpage.css" />
+    </head>
+    <body>
+    <div class="container">
+
+        <div class="profile-card">
+            <div class="profile-header"><!-- profile header section -->
+                <div class="main-profile">
+                    <div class="profile-image" id="userPhoto">
+                        <form method="POST" action="{{ url_for('profile') }}" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                {#                        <label for="" class="col-sm-2 col-form-label">Avatar</label>#}
+                                <div class="col-sm-10">
+                                    <img src="{{ avatar }}" width="125" height="125" id="userPhoto"/>
+                                </div>
+                            </div>
+                            {{ form.hidden_tag() }}
+                            {{ form.avatar.label }} {{ form.avatar }}
+                            <button type="submit" class="btn btn-primary" style="position: center;">Submit</button>
+                        </form>
+                    </div>
+                    <div class="profile-names">
+                        <h1 class="username">{{ u.username }}</h1>
+                        <strong class="page-title">Balance: {{ u.balance }}</strong>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" id="open_btn"
+                             onclick="show()"   data-target="#exampleModal" data-whatever="@getbootstrap">Recharge
+                        </button>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+
+                        <small class="page-title" >UserID:<span id="author_id">{{ u.id }}</span></small>
+                        <small class="page-title">E-mail: {{ u.email }}</small>
+
+                        <label class="switch">
+                            <input type="checkbox" name='email' id="btn2">
+                            <span class="slider round"></span>
+                            {% if u.seeEmail == 1 %}
+
+                                <script>$("input[name='email']").attr("checked", true);</script>
+                            {% else %}
+
+                            {% endif %}
+                        </label>
+                        <button href="#" id="showGigs" onclick="showGigs()" class="btn btn-primary">Gig</button>
+                        <script>
+                            function bindBtn2Click() {
+                                $("#btn2").on("click",
+                                    function (event) {
+                                        var $this = $(this);
+                                        $.ajax({
+                                            url: "http://127.0.0.1:5000/changeEmail",
+                                            method: "POST",
+                                            success: function (res) {
+                                                alert("Email privacy changed")
+                                            }
+
+                                        })
+                                    });
+                            }
+
+
+                            // Wait until the page documents are loaded before executing
+                            $(function () {
+                                bindBtn2Click();
+                            });
+
+                        </script>
+                        <style>
+                            .switch {
+                                position: relative;
+                                display: inline-block;
+                                width: 60px;
+                                height: 34px;
+                            }
+
+                            .switch input {
+                                opacity: 0;
+                                width: 0;
+                                height: 0;
+                            }
+
+                            .slider {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: #ccc;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+
+                            .slider:before {
+                                position: absolute;
+                                content: "";
+                                height: 26px;
+                                width: 26px;
+                                left: 4px;
+                                bottom: 4px;
+                                background-color: white;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                            }
+
+                            input:checked + .slider {
+                                background-color: #2196F3;
+                            }
+
+                            input:focus + .slider {
+                                box-shadow: 0 0 1px #2196F3;
+                            }
+
+                            input:checked + .slider:before {
+                                -webkit-transform: translateX(26px);
+                                -ms-transform: translateX(26px);
+                                transform: translateX(26px);
+                            }
+
+                            /* Rounded sliders */
+                            .slider.round {
+                                border-radius: 34px;
+                            }
+
+                            .slider.round:before {
+                                border-radius: 50%;
+                            }
+                        </style>
+                    </div>
+                </div>
+
+    <div id="background" class="back" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div  role="document"  >
+                                <div id="div1" class="content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">How much would you like to recharge?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="close()">
+                                            <span aria-hidden="true" id="close-button">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{ url_for('recharge') }}" method="post">
+
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">The balance is recharged in $:</label>
+                                                <textarea class="form-control" id="message-text"
+                                                          name='content'></textarea>
+                                            </div>
+
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="close()">
+                                                    Close
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">Recharge
+                                                </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+    <script type="text/javascript" src="../static/js/profile.js"></script>
+            <div class="account-info">
+                <h3 class="value"></h3>
+                    <div class="display-orders" id="display-orders"></div>
+                </div>
+
+        </div>
+    </div>
+    </body>
+    </html>
+{% endblock %}
+
+
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ArtFinder</title>
+
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <script type="text/javascript" src="../static/js/main.js" defer></script>
+    <script type="text/javascript" defer src="../static/js/comm.js"></script>
+
+    <!-- jquery -->
+  <script src="../static/js/jquery-3.3.1.min.js"></script>
+
+  <!-- script js -->
+  <script src="../static/js/app.js"></script>
+
+  <!-- main css-theme-theme -->
+
+    <link id="main" rel="stylesheet" href="../static/css/main.css" />
+
+</head>
+
+<body>
+<!--    &lt;!&ndash; 头部开始 ：logo+目录 &ndash;&gt;-->
+<!--    <div class="layout-header">-->
+<!--        <div class="haed">-->
+<!--            <div class="head-brand">-->
+<!--                <img src="../static/images/icon/logo.png" alt="Logo">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; 导航栏 &ndash;&gt;-->
+<!--        <div class="nav">-->
+<!--            <ul class="nav-list">-->
+
+<!--                <li class="nav-item">nav1</li>-->
+
+<!--                <li class="nav-item"> nav1</li>-->
+
+<!--                <li class="nav-item">nav1</li>-->
+
+<!--                <li class="nav-item">nav1</li>-->
+
+<!--                <li class="nav-item">nav1</li>-->
+
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; 头部结束 &ndash;&gt;-->
+    <!-- 主体内容开始 -->
+    <div>
+        <!-- 轮播图开始 -->
+        <div class="content">
+
+            <ul id="item">
+                <li class="item">
+                    <img src="../static/images/p5.jpg">
+                </li>
+                <li class="item">
+                    <img src="../static/images/p7.jpg">
+                </li>
+            </ul>
+            <div id="btn-left"></div>
+            <div id="btn-right">></div>
+            <ul id="circle">
+                <!-- 几个图片几个li -->
+                <li class="circle"></li>
+                <li class="circle"></li>
+            </ul>
+        </div>
+        <!-- 轮播图结束 -->
+        <!-- 主体内容开始 -->
+
+
+
+
+        <!-- about us -->
+  <section class="about py-5" id="about">
+    <div class="container">
+        <button onclick="toggle()" class="btn btn-primary" style="position: center;">Change Theme</button>
+
+      <div class="row">
+        <div class="col-10 mx-auto col-md-6 my-5">
+          <h1 class="text-capitalize">about <strong class="banner-title ">us</strong></h1>
+          <p class="my-4 text-muted w-75">This is a site designed for artists and buyers who want to request work, both buyers and sellers</p>
+{#          <a href="#" class="btn btn-outline-secondary btn-black text-uppercase ">explore</a>#}
+             <div  class="search-div">
+                    <form method="post" action="{{ url_for('search') }}" class="search-form">
+                        <select class="form-control" id="exampleFormControlSelect1" name='select'>
+                            <option>All</option>
+                            <option>Cartoon</option>
+                            <option>Cure</option>
+                            <option>Fan Fiction</option>
+
+                        </select>
+                        <input type="text" name="content" id="content"
+                               placeholder="Enter what you want">
+                        <input class="btn btn-outline-secondary btn-black text-uppercase " type="submit" value="Explore">
+                    </form>
+        </div>
+
+{#            <button class="follow">Follow</button>#}
+                    <a href="{{ url_for('clear') }}" id="showGigs" >Clear Database</a>
+
+        </div>
+        <div class="col-10 mx-auto col-md-6 align-self-center my-5">
+          <div class="about-img__container">
+            <img src="../static/images/p1.jpg" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end of about us -->
+<!--        <div class="introduction">-->
+<!--            <div class="introduction-title">-->
+<!--                About Us-->
+<!--            </div>-->
+<!--            <div class="introduction-content">-->
+<!--                <p>Word History: English is derived from England, one would think. But in fact the language name is-->
+<!--                    found long before the country name. The latter first appears as Englaland around the year 1000 and-->
+<!--                    means "the land of the Engle," that is, the Angles. The Angles, Saxons, and Jutes were the three-->
+<!--                    Germanic tribes that emigrated from what </p>-->
+<!--                <p>Word History: English is derived from England, one would think. But in fact the language name is-->
+<!--                    found long before the country name. The latter first appears as Englaland around the year 1000 and-->
+<!--                    means "the land of the Engle," that is, the Angles. The Angles, Saxons, and Jutes were the three-->
+<!--                    Germanic tribes that emigrated from what</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <!-- 商品展示 -->
+        <h3 class="display">Recommendations</h3>
+        <div class="display">
+
+            {% for gig in gigs %}
+    <!-- 图片和跳转 -->
+    <div class="display-item" >
+        <a href="{{ url_for('gig_page_single', gig_id = gig.id) }}" target="_blank" class="media" title="" rel="">
+        <div class="display-item-img">
+            <img src="../static/pic/{{ gig.pic }}" alt="">
+        </div></a>
+
+        <div class="display-item-detial">
+
+            <!-- 商品名称 -->
+            <div class="detial-title">
+                {{ gig.title }}
+            </div>
+
+            <!-- 作者头像和信息 -->
+            <img src = "../static/avatar/{{ gig.author.avatar }}" width="40px" height="40px" />
+            <div class="seller-name"><a
+                 href="{{ url_for('othersProfile', user_id = gig.author.id) }}"
+                target="_self" class="text-semi-bold"
+                title=""
+                rel="nofollow noopener noreferrer">{{ gig.author.username }}</a>
+            </div>
+
+            <!-- 商品描述 -->
+            <div class="detial-content">
+                <a href="" target="_blank" title="I will create detailed artwork for your tshirt or merch" rel=""> {{ gig.content }}</a>
+            </div>
+            <div class="detial-price">
+                ${{ gig.price }}
+            </div>
+            <div class="detial-point">
+                {% if auth %}
+                <a href="{{ url_for('gig_page_single', gig_id = gig.id) }}" target="_blank" class="media" title="" rel="">                click to buy >></a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" target="_blank" class="media" title="" rel="">                click to buy >></a>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+        </div>
+
+
+        <!-- 拼接卡片区域 -->
+        <div class="splicing">
+            <div class="splicing-item">
+                <div class="splicing-item-img" href="/Users/azalea/Desktop/162/templates/cartoonClass.html">
+                    <a href="{{ url_for('cartoon_page') }}">Cartoon</a>
+                    <img src="../static/images/p6.jpg" alt="" >
+                    <div class="img-title"><a>Cartoon</a></div>
+                </div>
+                <div class="splicing-item-img">
+                    <a href="{{ url_for('cure_page') }}">Cure</a>
+                    <img src="../static/images/123.png" alt="">
+                    <div class="img-title"><a href="{{ url_for('cure_page') }}">Cure</a></div>
+                </div>
+            </div>
+            <div class="splicing-bkg">
+                <img src="../static/images/p.jpg" alt="">
+            </div>
+            <div class="splicing-item">
+                <div class="splicing-item-img">
+                    <a href="{{ url_for('fan_page') }}">Fan Page</a>
+                    <img src="../static/images/234.jpg" alt="">
+                    <div class="img-title"><a href="{{ url_for('fan_page') }}">Fan Fiction</a></div>
+                </div>
+                <div class="splicing-item-img">
+                    <a href="{{ url_for('style_page') }}">Style Page</a>
+                    <img src="../static/images/345.jpg" alt="">
+                    <div class="img-title"><a href="{{ url_for('style_page') }}">Style Painting</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 列表卡片区域 -->
+
+        <!-- 邮件 -->
+{#        <div class="email">#}
+{#            <div class="email-title">England,Word History</div>#}
+{#            <div class="email-content"> Word History: English is derived from England,Word History: English is derived from England</div>#}
+{#            <input type="text" class="email-input" placeholder="email" id="" >#}
+{#            <input type="text"  class="email-input " placeholder="name">#}
+{#            <button type="submit" class="email-submit">submit</button>#}
+{#        </div>#}
+
+
+        <!-- 主体内容结束 -->
+<!--        <div class="footer">-->
+<!--            2131231231@qq.com-->
+<!--        </div>-->
+</div>
+</body>
+
+</html>
+{% endblock %}

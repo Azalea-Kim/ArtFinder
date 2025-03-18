@@ -1,0 +1,177 @@
+<html>
+<head>
+    <title>ArtFinder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="icon" type="image/x-icon" href="../static/icons/ArtFinder.ico"><!--显示窗口图标-->
+
+    <!-- bootstrap css-theme-theme -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/all.css">
+
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <script type="text/javascript" src="../static/js/main.js" defer></script>
+    <script type="text/javascript" defer src="../static/js/comm.js"></script>
+
+    <!-- jquery -->
+    <script src="../static/jquery/jquery.js"></script>
+
+    <!-- script js -->
+    <script src="../static/js/app.js"></script>
+
+    <!-- main css-theme-theme -->
+    <link id="style" rel="stylesheet" href="../static/css/style.css">
+    <link id="comm" rel="stylesheet" href="../static/css/comm.css"/>
+
+    {% block js_ext %}
+    {% endblock %}
+
+
+</head>
+
+<body>
+
+<header>
+    <div class="cover"></div>
+    <!-- 头部开始 ：logo+目录 -->
+    <div class="layout-header">
+        <div class="haed">
+            <div class="head-brand">
+                <img src="../static/icons/ArtFinder.ico" alt="Logo">
+            </div>
+        </div>
+
+
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="{{ url_for('home') }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Home</a>
+                </li>
+
+                {% if auth %}
+                <li><a href="{{ url_for('create_gig') }}">Create Gig</a>
+                </li>
+                <li><a href="{{ url_for('cart') }}">Shopping Cart</a></li>
+                <li><a href="{{ url_for('orders') }}">Orders</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <!--If you log in, you can view your personal information and log out. Otherwise, you can only visit the page as a tourist-->
+
+                <li><a href="{{ url_for('logout') }}">Logout</a>
+                </li>
+
+                {% else %}
+
+                <li class="nav-item"><a href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
+<!--                <li onclick="toggle()">Dark</li>-->
+<!--                <li id="change_bg" class="nav-item" ><a><i class="fa fa-user-circle-o" aria-hidden="true"></i>Theme</a></li>-->
+            </ul>
+        </div>
+
+    </div>
+</header>
+
+<!--Page body-->
+<div class="page-body">
+    {% block content %}
+    {% endblock %}
+</div>
+<!--The footer-->
+<div class="footer">
+    Team 16
+</div>
+
+<script>
+    function toggle() {
+        var el = document.getElementById("style");
+        if (el.href.match("../static/css/style.css")) {
+            el.href = "../static/css-theme/style.css";
+            } else {
+            el.href = "../static/css/style.css";
+            }
+        var el2 = document.getElementById("comm");
+        if (el2.href.match("../static/css/comm.css")) {
+            el2.href = "../static/css-theme/comm.css";
+            } else {
+            el2.href = "../static/css/comm.css";
+            }
+        var main = document.getElementById("main");
+        if (main.href.match("../static/css/main.css")) {
+            main.href = "../static/css-theme/main.css";
+            } else {
+            main.href = "../static/css/main.css";
+            }
+
+        var login = document.getElementById("login");
+        if (login.href.match("../static/css/login.css")) {
+            login.href = "../static/css-theme/login.css";
+            } else {
+            login.href = "../static/css/login.css";
+            }
+        var createNewGig = document.getElementById("createNewGig");
+        if (createNewGig.href.match("../static/css/createNewGig.css")) {
+            createNewGig.href = "../static/css-theme/createNewGig.css";
+            } else {
+            createNewGig.href = "../static/css/createNewGig.css";
+            }
+        var good = document.getElementById("good");
+        if (good.href.match("../static/css/good.css")) {
+            good.href = "../static/css-theme/good.css";
+            } else {
+            good.href = "../static/css/good.css";
+            }
+        var good2 = document.getElementById("good2");
+        if (good2.href.match("../static/css/good2.css")) {
+            good2.href = "../static/css-theme/good2.css";
+            } else {
+            good2.href = "../static/css/good2.css";
+            }
+        var profile = document.getElementById("profile");
+        if (profile.href.match("../static/css/profile.css")) {
+            profile.href = "../static/css-theme/profile.css";
+            } else {
+            profile.href = "../static/css/profile.css";
+            }
+        var shoppingCart = document.getElementById("shoppingCart");
+        if (shoppingCart.href.match("../static/css/shoppingCart.css")) {
+            shoppingCart.href = "../static/css-theme/shoppingCart.css";
+            } else {
+            shoppingCart.href = "../static/css/shoppingCart.css";
+            }
+
+}
+</script>
+
+<script>
+    function change(){
+    console.log("in theme!!")
+            if(!localStorage.getItem("bg")){
+                localStorage.setItem("bg",true);
+            }
+        let dom = $("*")
+        dom.removeClass("white_bg black_bg")
+        if (JSON.parse(localStorage.getItem("bg"))) {
+                    dom.addClass("white_bg");
+        } else {
+                    dom.addClass("black_bg");
+        }
+        $("#change_bg").click(() => {
+
+            dom.removeClass("white_bg black_bg")
+            if (JSON.parse(localStorage.getItem("bg"))) {
+                dom.addClass("black_bg");
+            } else {
+                dom.addClass("white_bg");
+
+            }
+            localStorage.setItem("bg",!JSON.parse(localStorage.getItem("bg")));
+        })
+    }
+
+    change();
+</script>
+
+</body>
+</html>
+
+
+

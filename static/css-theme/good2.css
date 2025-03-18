@@ -1,0 +1,211 @@
+.realdetail-anchor {
+    width: 70%;
+    margin: 20px auto 5px auto;
+    border-bottom: 1px solid #bfbfbf;
+    font-size: 14px;
+}
+
+.realdetail-anchor-span {
+    margin-left: 3px;
+}
+
+.realdetail-goods {
+    
+    display: flex;
+    flex-flow: row nowrap;
+    width: 70%;
+    height: 600px;
+    margin: 0px auto 20px auto;
+    border: 1px solid #bfbfbf;
+    background-color: #fff;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.realdetail-goods-img {
+    cursor: pointer;
+    /* width: 500px; */
+    width: 260px;
+    height: 330px;
+    justify-content: center;
+    margin: 0px 5% 0px 5%;
+}
+
+.realdetail-goods-detail {
+    margin: 0px 0px 0px 5%;
+    height: 70%;
+    width: 100%;
+}
+
+.realdetail-goods-detail-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.realdetail-goods-detail-label {
+    margin: 20px auto;
+    font-size: 14px;
+    color: rgb(105, 152, 223);
+}
+
+.realdetail-goods-detail-label label {
+    margin-right: 5px;
+}
+
+.realdetail-goods-detail-info {
+    width: 75%;
+    padding: 3% 3% 1% 5%;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid #bfbfbf;
+}
+
+.realdetail-goods-detail-info input {
+    width: 50px;
+    border: 1px solid #bfbfbf;
+}
+
+.realdetail-goods-detail-info-integral {
+    color: rgb(105, 152, 223);
+}
+
+.realdetail-goods-detail-info-num {
+    margin-left: 30px;
+}
+
+.realdetail-goods-detail-button {
+    width: 24%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(105, 152, 223);
+    color: #fff;
+    margin-left: 4%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.realdetail-goods-detail-time {
+    /* display: flex; */
+    margin: 35px 0px 0px 5%;
+    /* width: 40%; */
+    /* float: right; */
+}
+
+.realdetail-specific {
+    width: 70%;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 35px auto;
+}
+
+.realdetail-suggest {
+    width: 20%;
+
+}
+
+.realdetail-suggest-title {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #bfbfbf;
+    color: rgb(105, 152, 223);
+    font-size: 16px;
+    line-height: 40px;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.realdetail-suggest-title span {
+    margin: 0px 10px;
+}
+
+.realdetail-suggest-goods {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.realdetail-suggest-goods-item {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border: 1px solid #BFBFBF;
+    background-color: #fff;
+}
+
+.realdetail-suggest-goods-item-img {
+    width: 95%;
+    height: 250px;
+    margin: 5px 2.5%;
+    cursor: pointer;
+}
+
+.realdetail-suggest-goods-item-title {
+
+    display: flex;
+    width: 90%;
+    flex-flow: row wrap;
+    /* height: 20px; */
+    line-height: 20px;
+    font-size: 16px;
+    justify-content: center;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    cursor: pointer;
+}
+
+.realdetail-suggest-goods-item-span {
+    position: absolute;
+    top: 85%;
+    left: 20px;
+}
+
+.realdetail-suggest-goods-item-span span {
+    color: rgb(204, 92, 129);
+    margin-right: 6px;
+    font-size: 17px;
+}
+
+.realdetail-suggest-goods-item-span a {
+    color: black;
+    font-size: 17px;
+}
+
+.realdetail-introduce {
+    
+    width: 77%;
+    /* height: auto; */
+    margin-left: 3%;
+    border: 1px solid #BFBFBF;
+    background-color: #fff;
+}
+
+.realdetail-introduce-title {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #BFBFBF;
+    line-height: 40px;
+    color: rgb(204, 92, 129);
+    font-size: 17px;
+}
+
+.realdetail-introduce-title span {
+    margin-left: 15px;
+}
+
+.realdetail-introduce-detail {
+    margin: 15px;
+}
+#requireDescription{
+font-size: 3px;
+}
+
+.text-area{
+
+    width: 400px;
+    height: 50px;
+padding: 20px;
+border-radius: 5px;
+resize: none;
+}

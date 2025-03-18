@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block content %}
+    <head>
+
+        <link rel="stylesheet" href="../static/css/login.css" media="screen">
+        <script src="../static/jquery/jquery.js"></script>
+        <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+
+
+        <title>
+            ArtFinder register page
+        </title>
+    </head>
+
+    <body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active"> Register </h2>
+            <br>
+            <br>
+
+            <!-- Icon -->
+            <!-- <div class="fadeIn first">
+              <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+            </div> -->
+
+            <!-- Login Form -->
+            <form method="POST" action="{{ url_for('register') }}">
+
+                <div class="loadingCheck">
+                    <input type="text" id="account" class="username" name="username" placeholder="username">
+                    <div id="checkuser" class="username"> </div>
+                </div>
+                <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" >
+                <input id="password" class="fadeIn third" name="password" placeholder="password" type="password">
+                <input type="password" id="checkPassword" class="fadeIn third" name="password_confirm"
+                       placeholder="check password">
+                <input type="text" id="emailVer" class="fadeIn third" name="captcha"
+                       placeholder="email verification code">
+
+
+                    <div style="display:inline-block" >
+                        <button class="btn btn-outline-secondary" type="button" onclick="bindC()" id="captcha_btn">Get Captcha</button>
+                    </div>
+                <div>
+                    <input type="text" value="" id="text" class="fadeIn third" name="login"
+                           placeholder="verification code"><br>
+
+
+                    <canvas id="canvas" class="fadeIn third" name="login" width="120" height="40" onclick="verti()"
+                            style="border:2px solid rgb(255, 255, 255);border-radius:15px;"></canvas>
+                </div>
+
+                <input type="submit" value="Register" onclick="" class="fadeIn fourth">
+                <br><a class="underlineHover" href="{{ url_for('login') }}">Return to login</a>
+            </form>
+
+        </div>
+    </div>
+
+
+    <script>
+        var show_num = [];
+        draw(show_num);
+
+        function verti() {
+            draw(show_num);
+        }
+
+        function draw(show_num) {
+            var canvas_width = document.getElementById('canvas').clientWidth;
+            var canvas_height = document.getElementById('canvas').clientHeight;
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext("2d");
+            canvas.width = canvas_width;
+            canvas.height = canvas_height;
+            var sCode = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0";
+            var aCode = sCode.split(",");
+            var alen = aCode.length;
+            for (var i = 0; i <= 3; i++) {
+                var j = Math.floor(Math.random() * alen);
+                var deg = Math.random() * 30 * Math.PI / 180;
+                var txt = aCode[j];
+                show_num[i] = txt;
+                var x = 10 + i * 20;
+                var y = 20 + Math.random() * 8;
+                context.font = "bold 28px 微软雅黑";
+
+                context.translate(x, y);
+                context.rotate(deg);
+                context.fillStyle = randomColor();
+                context.fillText(txt, 0, 0);
+                context.rotate(-deg);
+                context.translate(-x, -y);
+            }
+            for (var i = 0; i <= 5; i++) {
+                context.strokeStyle = randomColor();
+                contextbeginPath();
+                context.moveTo(Math.random() * canvas_width, Math.random() * canvas_height);
+                context.lineTo(Math.random() * canvas_width, Math.random() * canvas_height);
+                context.stroke();
+            }
+            for (var i = 0; i <= 30; i++) {
+                context.strokeStyle = randomColor();
+                context.beiginPath();
+                var x = Math.random() * canvas_width;
+                var y = Math.random() * canvas_height;
+                context.moveTo(x, y);
+                context.lineTo(x + 1, y + 1);
+                context.stroke();
+            }
+        }
+
+        function randomColor() {
+            var a = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var c = Math.floor(Math.random() * 256);
+            return "rgb(" + a + "," + b + "," + c + ")";
+        }
+
+
+
+        // Bind the click event for the Get Captcha button
+        function bindC(event) {
+            var $this = $(this);
+            var email = $("input[name='email']").val();
+            if (!email) {
+                alert("Please enter your email address first");
+                return;
+            }
+
+            // Sending network requests through JS: Ajax
+            $.ajax({
+                url: "/captcha/",
+                method: "POST",
+                data: {
+                    "email": email
+                },
+                success: function (res) {
+                    var code = res['code'];
+                    if (code === 200) {
+                        $this.off("click");     //Off click event
+                        // Start the countdown
+                        var countDown = 60;
+                        var timer = setInterval(function () {
+                            countDown -- ;
+                                if (countDown > 0) {
+                                    $this.text("Resend in " + countDown + " seconds");
+                                } else {
+                                    $this.text("Get Captcha ");
+                                    bindCaptchaBtnClick();      //Rebind the click event
+                                    clearInterval(timer);       //Turn off timer
+                                }
+                            },
+                            1000)
+                        alert("Captcha sent successfully")
+                    } else {
+                        alert(res['message'])
+                    }
+                }
+
+            })
+        };
+    </script>
+    </body>
+    </html>
+{% endblock %}

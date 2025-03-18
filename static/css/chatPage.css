@@ -1,0 +1,231 @@
+body {
+    background-color: rgb(176, 207, 224);
+    font-family: sans-serif;
+}
+
+main {
+    width: 400px;
+    height: 475px;
+    background-color: white;
+    margin: 5% 35%;
+    box-sizing: border-box;
+}
+
+/* Define the page header style */
+.head {
+    background-color: rgb(120, 132, 241);
+    height: 60px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+/* Define the name part style */
+.name {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: white;
+    column-gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.circle {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.cancel {
+    opacity: 60%;
+}
+
+.cancel:hover {
+    opacity: 100%;
+}
+
+.chat {
+    padding: 20px;
+}
+
+.date {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 8px;
+    color: gray;
+    font-size: 10px;
+    font-weight: 600;
+    opacity: 40%;
+}
+
+.line {
+    width: 150px;
+    height: 2px;
+    background-color: gray;
+}
+
+.chatone {
+   width: 250px;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    /*flex-direction: column;*/
+}
+
+/* Define the chat box style */
+.msgone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    height: 40px;
+    padding: 8px;
+    margin-top: 0.3rem;
+    position: relative;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+}
+
+.msgone::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    border-top: 0px solid transparent;
+    border-right: 10px solid lavender;
+    border-left: none;
+    border-bottom: 8px solid transparent;
+}
+
+.tex {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.chattwo {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-left: 5.5rem;
+    width: 270px;
+    justify-content: flex-end;
+    border-radius: 4px;
+}
+
+.msgtwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 244, 248);
+    height: 40px;
+    padding: 8px;
+    margin-top: 0.4rem;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    position: relative;
+}
+
+.msgtwo::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0px;
+    border-top: 0px solid transparent;
+    border-right: none;
+    border-left: 10px solid rgb(244, 244, 248);
+    border-bottom: 8px solid transparent;
+
+}
+
+.chatthr {
+   width: 80px;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+
+}
+
+/* Inherits the chatthr style */
+.msgthr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    height: 30px;
+    padding: 2px 6px;
+    margin-top: 0.3rem;
+    position: relative;
+
+}
+
+.msgthr::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    border-top: 0px solid transparent;
+    border-right: 10px solid lavender;
+    border-left: none;
+    border-bottom: 8px solid transparent;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 180px;
+    background-color: pink;
+    margin-top: 1rem;
+    padding: 1px 1px ;
+    margin-left: 11rem;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    
+}
+
+/* Defines a text style */
+.text {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Define the form style */
+.form {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sen {
+    
+    color: rgb(92, 218, 249);
+    font-weight: 700;
+    background: none;
+    cursor: pointer;
+}
+
+/* Define the input box style */
+input {
+    border: none;
+    outline: none;
+}
+
+hr {
+    margin-top: 1rem;
+    opacity: 70%;
+}
+
+.time {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 40%;
+}

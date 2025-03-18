@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ArtFinder</title>
+    <!--显示窗口图标-->
+
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/comm.css" />
+        <link rel="stylesheet" href="../static/css/classpage.css" />
+
+
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <script type="text/javascript" src=".../static/js/main.js" defer></script>
+    <script type="text/javascript" defer src=".../static/js/comm.js"></script>
+</head>
+
+<body>
+
+<h1 >Style Painting</h1>
+
+
+<!-- 商品展示 -->
+    <div class="display">
+    {% for gig in gigs %}
+
+    <!-- 图片和跳转 -->
+    <div class="display-item">
+        <a href="{{ url_for('gig_page_single', gig_id = gig.id) }}" target="_blank" class="media" title="" rel="">
+        <div class="display-item-img">
+            <img src="../static/pic/{{ gig.pic }}" alt="">
+        </div></a>
+
+        <div class="display-item-detial">
+
+            <!-- 商品名称 -->
+            <div class="detial-title">
+                {{ gig.title }}
+            </div>
+
+            <!-- 作者头像和信息 -->
+            <img src = "../static/avatar/{{ gig.author.avatar }}" width="40px" height="40px" />
+            <div class="seller-name"><a
+                href="{{ url_for('othersProfile', user_id = gig.author.id) }}"
+                target="_self" class="text-semi-bold"
+                title=""
+                rel="nofollow noopener noreferrer">{{ gig.author.username }}</a>
+            </div>
+
+            <!-- 商品描述 -->
+            <div class="detial-content">
+                <a href="" target="_blank" title="I will create detailed artwork for your tshirt or merch" rel=""> {{ gig.content }}</a>
+            </div>
+            <div class="detial-price">
+                ${{ gig.price }}
+            </div>
+            <div class="detial-point">
+
+                                {% if auth %}
+                <a href="{{ url_for('gig_page_single', gig_id = gig.id) }}" target="_blank" class="media" title="" rel="">                click to buy >></a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" target="_blank" class="media" title="" rel="">                click to buy >></a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- <div class="display-item">
+        <div class="display-item-img">
+            <img src="./images/images/p11.jpeg" alt="">
+        </div>
+        <div class="display-item-detial">
+            <div class="detial-title">
+                Art Name
+            </div>
+            <div class="detial-content">
+                Word History: English is derived from England,Word History: English is derived from England
+            </div>
+            <div class="detial-price">
+                $123
+            </div>
+            <div class="detial-point">
+                点击详情》》
+            </div>
+        </div>
+    </div>
+    <div class="display-item">
+        <div class="display-item-img">
+            <img src="./images/images/p11.jpeg" alt="">
+        </div>
+        <div class="display-item-detial">
+            <div class="detial-title">
+                Art Name
+            </div>
+            <div class="detial-content">
+                Word History: English is derived from England,Word History: English is derived from England
+            </div>
+            <div class="detial-price">
+                $123
+            </div>
+            <div class="detial-point">
+                点击详情》》
+            </div>
+        </div>
+    </div> -->
+</div>
+
+</body>
+
+</html>
+{% endblock %}

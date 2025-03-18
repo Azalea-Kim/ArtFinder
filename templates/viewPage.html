@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<head>
+    <meta charset="utf-8" />
+
+
+    <title>ArtFinder</title>
+    <!--显示窗口图标-->
+
+    <link rel="stylesheet" href="../static/css/good.css" />
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="../static/js/good.js" defer></script>
+    <script type="text/javascript" defer src="../static/js/comm.js"></script>
+
+</head>
+
+<body>
+
+<!--   <div>我的第一个AJAX</div>-->
+<!--    <button type="button" onclick="loadBasicDoc()">点击</button>-->
+<!--    <div id="detail-content"></div>-->
+
+    <div class="good">
+        <div class="coursel">
+            <div class="good-title">{{ gig.title }}</div>
+            <img src = "../static/avatar/{{ gig.author.avatar }}" class="authorAvatar" width="40px" height="40px" />
+            <div class="seller-name"><a
+                href="/handpedia?source=gig_cards&amp;referrer_gig_slug=draw-detailed-artwork-for-your-tshirt-or-merch&amp;ref_ctx_id=4f73b39cd062b6697f3fcbf70d2fc378&amp;imp_id=1ba44c43-cdbc-4bd8-91b4-7cfc68d9f558"
+                target="_self" class="text-semi-bold"
+                title=""
+                rel="nofollow noopener noreferrer">{{ gig.author.username }}</a>
+            </div>
+            <!-- 轮播图开始 -->
+            <div class="content">
+                <ul id="item">
+                    <li class="item">
+                        <img src = "../static/pic/{{ gig.pic }}">
+                    </li>
+
+                </ul>
+                <div id="btn-left"> < </div>
+
+            </div>
+        </div>
+        <!-- 轮播图结束 -->
+        <!-- 详情信息 -->
+        <div class="good-detial">
+            <div class="good-top">
+
+<!--                AJAX implement ajax实现局部刷新-->
+                <div class="detial-list">
+                    <ul id="list-0">
+                        <li id="article-0" onclick="loadBasicDoc()">
+                            Information
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="detial-content" id="detail-content">
+                    <div class="detial-price"><a>Price:</a><a>{{ gig.price }}$  </a></div>
+
+                    <div class="detial-intro"></div>
+                    <div class="detial-button2"><a href="{{ url_for('shopping', gig_id = gig.id) }}">Place an order</a></div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="realdetail-introduce">
+        <div class="realdetail-introduce-title"><span>Description</span></div>
+    
+        <div class="realdetail-introduce-detail">
+            <p>{{ gig.content }}.</p>
+        </div>
+    </div>
+</div>
+    <!-- 主体内容结束 -->
+</body>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="stylesheet" href="../static/css/main.css" />
+        <link rel="stylesheet" href="../static/css/classpage.css" />
+
+
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <script type="text/javascript" src=".../static/js/main.js" defer></script>
+    <script type="text/javascript" defer src=".../static/js/comm.js"></script>
+
+  <!-- jquery -->
+  <script src="../static/jquery/jquery-3.3.1.min.js"></script>
+
+  <!-- script js -->
+  <script src="../static/js/app.js"></script>
+
+  <title>ArtFinder</title>
+
+</head>
+
+<body>
+  <header>
+
+
+    <!-- banner  -->
+    <div class="container-fluid">
+      <div class="row max-height justify-content-center align-items-center">
+        <div class="col-10 mx-auto banner text-center">
+          <h1 class="text-capitalize">Your <strong class="banner-title " >Orders as a Buyer</strong></h1>
+        </div>
+
+      </div>
+    </div>
+    <!--end of  banner  -->
+  </header>
+  <!-- header -->
+
+
+
+
+  <!-- store -->
+  <section id="store" class="store py-5">
+    <div class="container">
+      <!--filter buttons -->
+      <div class="row">
+        <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap">
+          <a href="{{ url_for("orders") }}" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="all">As a Buyer</a>
+          <a href="{{ url_for("orders_seller") }}" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="cakes">As a Seller</a>
+
+        </div>
+      </div>
+      <div class="row" class="store-items" id="store-items">
+
+
+
+      </div>
+    </div>
+  </section>
+  <!--end of store items -->
+
+<div class="display" >
+<!--  这是正在进行的订单-->
+
+  <div class="display-orders" >
+      <h3>Ongoing Orders</h3>
+    <!--     开始一个gig-->
+      {% for o in ongoing %}
+ <div class="display-item">
+        <div class="display-item-img">
+            <img src="../static/pic/{{ o.gig.pic }}" alt="">
+        </div>
+        <div class="display-item-detial">
+            <div class="detial-title">
+                Title: {{ o.gig.title }} ID:{{ o.id }}
+            </div>
+            <div class="detial-content">
+                Requirements: {{ o.requirement }}
+            </div>
+            <div class="detial-price">
+                ${{ o.price }}
+            </div>
+
+        </div>
+    </div>
+      {% endfor %}
+  </div>
+    <!--    结束一个-->
+
+    <div class="display-orders" >
+        <h3>Completed Orders</h3>
+    <!--     开始一个gig-->
+        {% for f in finished %}
+ <div class="display-item">
+
+        <div class="display-item-img">
+            <img src="../static/pic/{{ f.gig.pic }}" alt="">
+        </div>
+        <div class="display-item-detial">
+            <div class="detial-title">
+                Title: {{ f.gig.title }} ID:{{ f.id }}
+            </div>
+            <div class="detial-content">
+                Requirements: {{ f.requirement }}
+            </div>
+            <div class="detial-price">
+                ${{ f.price }}
+            </div>
+            <div class="detial-point">
+                Finished
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+{% endblock %}

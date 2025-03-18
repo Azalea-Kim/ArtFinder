@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="../static/css/style.css">
+
+  <link rel="stylesheet" href="../static/css/main.css" />
+        <link rel="stylesheet" href="../static/css/classpage.css" />
+
+
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <script type="text/javascript" src=".../static/js/main.js" defer></script>
+    <script type="text/javascript" defer src=".../static/js/comm.js"></script>
+
+  <!-- jquery -->
+  <script src="../static/jquery/jquery-3.3.1.min.js"></script>
+
+  <!-- script js -->
+  <script src="../static/js/app.js"></script>
+
+  <title>ArtFinder</title>
+
+</head>
+
+<body>
+  <header>
+
+
+    <!-- banner  -->
+    <div class="container-fluid">
+      <div class="row max-height justify-content-center align-items-center">
+        <div class="col-10 mx-auto banner text-center">
+          <h1 class="text-capitalize">Your <strong class="banner-title " >Orders as a Seller</strong></h1>
+        </div>
+
+      </div>
+    </div>
+    <!--end of  banner  -->
+  </header>
+  <!-- header -->
+
+
+
+
+  <!-- store -->
+  <section id="store" class="store py-5">
+    <div class="container">
+      <!--filter buttons -->
+      <div class="row">
+        <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap">
+          <a href="{{ url_for("orders") }}" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="all">As a Buyer</a>
+          <a href="{{ url_for("orders_seller") }}" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="cakes">As a Seller</a>
+
+        </div>
+      </div>
+      <div class="row" class="store-items" id="store-items">
+
+
+
+      </div>
+    </div>
+  </section>
+  <!--end of store items -->
+
+<div class="display" >
+<!--  这是正在进行的订单-->
+  <div class="display-orders" >
+    <!--     开始一个gig-->
+      {% for o in ongoing %}
+ <div class="display-item">
+        <div class="display-item-img">
+            <img src="../static/pic/{{ o.gig.pic }}" alt="">
+        </div>
+        <div class="display-item-detial">
+            <div class="detial-title">
+                Title: {{ o.gig.title }} ID:{{ o.id }}
+            </div>
+            <div class="detial-content">
+                Requirements: {{ o.requirement }}
+            </div>
+            <div class="detial-price">
+                ${{ o.price }}
+            </div>
+            <div class="detial-point">
+                <button id="collection" class="btn btn-outline-secondary btn-black text-uppercase "  style="color: yellow"
+                                        onclick="FinishOrder({{ o.id }})">Finish</button>
+                                <script>
+                                    function FinishOrder(order_id) {
+                                        $.ajax({
+                                            url: "/finishorder",
+                                            method: "POST",
+                                            data: {
+                                                "order_id": order_id
+                                            },
+                                            success: function (res) {
+                                                alert("Successfully finished this order")
+                                                window.location.href = "/orders"
+                                            }
+                                        })
+                                    }
+                                </script>
+            </div>
+        </div>
+    </div>
+      {% endfor %}
+  </div>
+    <!--    结束一个-->
+{#    <!--     开始一个gig-->#}
+{#    <div class="display-item">#}
+{#        <div class="display-item-img">#}
+{#            <img src="./images/p11.jpeg" alt="">#}
+{#        </div>#}
+{#        <div class="display-item-detial">#}
+{#            <div class="detial-title">#}
+{#                Art Name-ongoing#}
+{#            </div>#}
+{#            <div class="detial-content">#}
+{#                Word History: English is derived from England,Word History: English is derived from England#}
+{#            </div>#}
+{#            <div class="detial-price">#}
+{#                $123#}
+{#            </div>#}
+{#            <div class="detial-point">#}
+{#                点击详情》》#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <!--    结束一个-->#}
+{#</div>#}
+{##}
+
+    <div class="display-orders" >
+    <!--     开始一个gig-->
+        {% for f in finished %}
+ <div class="display-item">
+
+        <div class="display-item-img">
+            <img src="../static/pic/{{ f.gig.pic }}" alt="">
+        </div>
+        <div class="display-item-detial">
+            <div class="detial-title">
+                Title: {{ f.gig.title }} ID:{{ f.id }}
+            </div>
+            <div class="detial-content">
+                Requirements: {{ f.requirement }}
+            </div>
+            <div class="detial-price">
+                ${{ f.price }}
+            </div>
+            <div class="detial-point">
+                Finished
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+{#    <!--    结束一个-->#}
+{#    <!--     开始一个gig-->#}
+{#    <div class="display-item">#}
+{#        <div class="display-item-img">#}
+{#            <img src="./images/p11.jpeg" alt="">#}
+{#        </div>#}
+{#        <div class="display-item-detial">#}
+{#            <div class="detial-title">#}
+{#                Art Name-ongoing#}
+{#            </div>#}
+{#            <div class="detial-content">#}
+{#                Word History: English is derived from England,Word History: English is derived from England#}
+{#            </div>#}
+{#            <div class="detial-price">#}
+{#                $123#}
+{#            </div>#}
+{#            <div class="detial-point">#}
+{#                点击详情》》#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <!--    结束一个-->#}
+</div>
+
+</div>
+  <!-- modal-container -->
+<!--  <div class="container-fluid ">-->
+<!--    <div class="row lightbox-container align-items-center">-->
+<!--      <div class="col-10 col-md-10 mx-auto text-right lightbox-holder">-->
+<!--        <span class="lightbox-close"><i class="fas fa-window-close"></i></span>-->
+<!--        <div class="lightbox-item"></div>-->
+<!--        <span class="lightbox-control btnLeft"><i class="fas fa-caret-left"></i></span>-->
+<!--        <span class="lightbox-control btnRight"><i class="fas fa-caret-right"></i></span>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+</body>
+
+</html>
+{% endblock %}

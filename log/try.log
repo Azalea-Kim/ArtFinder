@@ -1,0 +1,144 @@
+2022-12-20 16:48:39,116 - app - INFO - logger activated
+2022-12-20 16:48:39,543 - app - INFO - logger activated
+2022-12-20 16:48:41,084 - app - INFO - Home
+2022-12-20 16:48:41,144 - app - ERROR - 404
+2022-12-20 16:48:41,470 - app - ERROR - 404
+2022-12-20 16:48:42,669 - app - INFO - logout successfully
+2022-12-20 16:48:42,674 - app - INFO - Try to login
+2022-12-20 16:48:42,697 - app - ERROR - 404
+2022-12-20 16:48:44,741 - app - INFO - Login successfully for Lulu
+2022-12-20 16:48:44,747 - app - INFO - Home
+2022-12-20 16:48:44,774 - app - ERROR - 404
+2022-12-20 16:48:44,786 - app - ERROR - 404
+2022-12-20 16:48:46,011 - app - WARNING - Did not provide validate input for gig creation
+2022-12-20 16:48:46,039 - app - ERROR - 404
+2022-12-20 16:48:46,845 - app - INFO - Lulu: cart
+2022-12-20 16:48:46,873 - app - ERROR - 404
+2022-12-20 16:48:46,888 - app - ERROR - 404
+2022-12-20 16:48:46,896 - app - ERROR - 404
+2022-12-20 17:04:09,133 - app - INFO - logger activated
+2022-12-20 17:04:09,746 - app - INFO - logger activated
+2022-12-20 17:04:11,336 - app - INFO - Home
+2022-12-20 17:04:11,525 - app - ERROR - 404
+2022-12-20 17:04:11,527 - app - ERROR - 404
+2022-12-20 17:04:20,391 - app - INFO - Browse fan fiction page
+2022-12-20 17:04:20,440 - app - ERROR - 404
+2022-12-20 17:04:20,455 - app - ERROR - 404
+2022-12-20 17:04:20,458 - app - ERROR - 404
+2022-12-20 17:04:26,458 - app - INFO - Browse cure page
+2022-12-20 17:04:26,497 - app - ERROR - 404
+2022-12-20 17:04:26,517 - app - ERROR - 404
+2022-12-20 17:04:26,519 - app - ERROR - 404
+2022-12-20 17:04:31,173 - app - INFO -  checkYaya's profile
+2022-12-20 17:04:31,207 - app - ERROR - 404
+2022-12-20 17:05:04,778 - app - INFO - Home
+2022-12-20 17:05:04,791 - app - ERROR - 404
+2022-12-20 17:05:04,816 - app - ERROR - 404
+2023-02-27 17:32:50,057 - app - INFO - logger activated
+2023-02-27 17:32:51,240 - app - INFO - logger activated
+2023-02-27 17:32:51,929 - app - INFO - Home
+2023-02-27 17:32:52,109 - app - ERROR - 404
+2023-02-27 17:32:52,121 - app - ERROR - 404
+2023-02-27 17:32:54,646 - app - ERROR - 404
+2023-02-27 17:32:54,651 - app - ERROR - 404
+2023-02-27 17:33:09,973 - app - INFO - Try to login
+2023-02-27 17:33:10,003 - app - ERROR - 404
+2023-02-27 17:33:23,760 - app - INFO - Try to login
+2023-02-27 17:33:23,786 - app - ERROR - 404
+2023-02-27 17:33:37,455 - app - INFO - Try to login
+2023-02-27 17:33:37,480 - app - ERROR - 404
+2023-02-27 17:33:39,541 - app - INFO - Register
+2023-02-27 17:33:39,569 - app - ERROR - 404
+2023-02-27 17:33:43,117 - app - INFO - Checking username
+2023-02-27 17:33:45,131 - app - INFO - Username is available
+2023-02-27 17:34:10,601 - app - INFO - Sent email captcha : IJD4od
+2023-02-27 17:34:21,196 - app - INFO - azalea : account created
+2023-02-27 17:34:21,205 - app - INFO - Try to login
+2023-02-27 17:34:21,234 - app - ERROR - 404
+2023-02-27 17:34:32,535 - app - INFO - Login successfully for azalea
+2023-02-27 17:34:32,544 - app - INFO - Home
+2023-02-27 17:34:32,573 - app - ERROR - 404
+2023-02-27 17:34:32,586 - app - ERROR - 404
+2023-02-27 17:34:40,870 - app - INFO - Browse cartoon page
+2023-02-27 17:34:40,909 - app - ERROR - 404
+2023-02-27 17:34:40,920 - app - ERROR - 404
+2023-02-27 17:34:40,924 - app - ERROR - 404
+2023-02-27 17:34:44,198 - app - INFO - Browse single gig page of ID: 1
+2023-02-27 17:34:44,229 - app - ERROR - 404
+2023-02-27 17:34:56,695 - app - INFO - shopping
+2023-02-27 17:34:56,730 - app - ERROR - 404
+2023-02-27 17:35:15,822 - app - INFO - azaleashopping and add to cart
+2023-02-27 17:35:15,834 - app - INFO - azalea: cart
+2023-02-27 17:35:15,865 - app - ERROR - 404
+2023-02-27 17:35:15,875 - app - ERROR - 404
+2023-02-27 17:35:15,903 - app - ERROR - 404
+2023-02-27 17:35:15,961 - app - ERROR - 404
+2023-02-27 17:35:23,248 - app - INFO - added order to current deal list
+2023-02-27 17:35:35,880 - app - WARNING - The balance is not enough for paying
+2023-02-27 17:35:37,391 - app - INFO - azalea: cart
+2023-02-27 17:35:37,418 - app - ERROR - 404
+2023-02-27 17:35:37,428 - app - ERROR - 404
+2023-02-27 17:35:37,454 - app - ERROR - 404
+2023-02-27 17:35:37,471 - app - ERROR - 404
+2023-02-27 17:35:38,005 - app - INFO - Checking profile
+2023-02-27 17:35:38,040 - app - ERROR - 404
+2023-02-27 17:35:38,052 - app - ERROR - 404
+2023-02-27 17:35:49,453 - app - INFO - (Successful) after Recharged :100
+2023-02-27 17:35:49,464 - app - INFO - Checking profile
+2023-02-27 17:35:49,492 - app - ERROR - 404
+2023-02-27 17:35:49,503 - app - ERROR - 404
+2023-02-27 17:35:51,346 - app - INFO - azalea: cart
+2023-02-27 17:35:51,374 - app - ERROR - 404
+2023-02-27 17:35:51,383 - app - ERROR - 404
+2023-02-27 17:35:51,411 - app - ERROR - 404
+2023-02-27 17:35:51,431 - app - ERROR - 404
+2023-02-27 17:36:19,575 - app - INFO - added order to current deal list
+2023-02-27 17:36:22,651 - app - INFO - Paid successfully at price 20
+2023-02-27 17:36:24,615 - app - INFO - azalea: orders as a buyer
+2023-02-27 17:36:24,649 - app - ERROR - 404
+2023-02-27 17:36:24,663 - app - ERROR - 404
+2023-02-27 17:36:24,664 - app - ERROR - 404
+2023-02-27 17:36:24,714 - app - ERROR - 404
+2023-02-27 17:36:32,669 - app - INFO - azalea: orders as a seller
+2023-02-27 17:36:32,705 - app - ERROR - 404
+2023-02-27 17:36:32,712 - app - ERROR - 404
+2023-02-27 17:36:32,718 - app - ERROR - 404
+2023-02-27 17:36:32,748 - app - ERROR - 404
+2023-02-27 17:36:33,915 - app - INFO - azalea: orders as a buyer
+2023-02-27 17:36:33,945 - app - ERROR - 404
+2023-02-27 17:36:33,955 - app - ERROR - 404
+2023-02-27 17:36:33,956 - app - ERROR - 404
+2023-02-27 17:36:33,995 - app - ERROR - 404
+2023-02-27 17:36:41,510 - app - INFO - azalea: orders as a seller
+2023-02-27 17:36:41,538 - app - ERROR - 404
+2023-02-27 17:36:41,549 - app - ERROR - 404
+2023-02-27 17:36:41,551 - app - ERROR - 404
+2023-02-27 17:36:41,585 - app - ERROR - 404
+2023-02-27 17:36:45,201 - app - WARNING - Did not provide validate input for gig creation
+2023-02-27 17:36:45,246 - app - ERROR - 404
+2023-02-27 17:36:49,182 - app - INFO - logout successfully
+2023-02-27 17:36:49,189 - app - INFO - Try to login
+2023-02-27 17:36:49,215 - app - ERROR - 404
+2023-04-13 19:42:11,843 - app - INFO - logger activated
+2023-04-13 19:42:12,634 - app - INFO - logger activated
+2023-04-13 19:42:17,005 - app - INFO - Home
+2023-04-13 19:42:17,136 - app - ERROR - 404
+2023-04-13 19:42:17,140 - app - ERROR - 404
+2023-04-13 19:42:17,141 - app - ERROR - 404
+2023-04-13 19:42:17,269 - app - ERROR - 404
+2023-04-13 19:42:17,298 - app - ERROR - 404
+2023-04-13 19:42:30,527 - app - INFO - Try to login
+2023-04-13 19:42:30,549 - app - ERROR - 404
+2023-04-13 19:42:30,551 - app - ERROR - 404
+2023-04-13 19:42:30,580 - app - ERROR - 404
+2023-04-13 19:42:41,965 - app - INFO - Login successfully for azalea
+2023-04-13 19:42:41,980 - app - INFO - Home
+2023-04-13 19:42:42,014 - app - ERROR - 404
+2023-04-13 19:42:42,038 - app - ERROR - 404
+2023-04-13 19:42:44,057 - app - INFO - Checking profile
+2023-04-13 19:42:44,374 - app - ERROR - 404
+2023-04-13 19:42:44,502 - app - ERROR - 404
+2023-04-13 19:43:18,452 - app - INFO - Changed profile avatar
+2023-04-13 19:43:18,491 - app - INFO - Checking profile
+2023-04-13 19:43:18,581 - app - ERROR - 404
+2023-04-13 19:43:18,595 - app - ERROR - 404

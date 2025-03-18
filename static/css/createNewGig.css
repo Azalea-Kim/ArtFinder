@@ -1,0 +1,109 @@
+/*basic settings */
+
+a:focus {
+	outline: none !important;
+	outline-offset: none !important;
+}
+
+body {
+	background: #f5f6f5;
+	color: #56baed;
+}
+
+/* helper classses */
+
+.margin-top-20 {
+	margin-top: 20px;
+}
+
+.margin-bottom-20 {
+	margin-top: 20px;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
+/* box component */
+
+.box {
+
+	border-color: #e6e6e6;
+	background: #FFF;
+	border-radius: 6px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	margin-bottom: 40px;
+}
+
+.box-center {
+	margin: 20px auto;
+}
+
+/* input [type = file]
+----------------------------------------------- */
+
+input[type=file] {
+	display: block !important;
+	right: 1px;
+	top: 1px;
+	height: 34px;
+	opacity: 0;
+  width: 100%;
+	background: none;
+	position: absolute;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.control-fileupload {
+	display: block;
+	border: 1px solid #d6d7d6;
+	background: #FFF;
+	border-radius: 4px;
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	padding: 0px 10px 2px 10px;
+  overflow: hidden;
+  position: relative;
+  
+}
+  /* File upload button */
+  
+ 
+  
+  label {
+    line-height: 24px;
+    color: #999999;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 1;
+    margin-right: 90px;
+    margin-bottom: 0px;
+    cursor: text;
+  }
+
+  button{
+    background-color: #56baed;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+    border-radius: 10%;
+  }
+  @media screen and (min-width: 600px){
+       .container{
+       margin-top:10%;
+       }
+  }
+  @media screen and (max-width: 600px){
+       .container{
+       margin-top:50%;
+       }
+  }

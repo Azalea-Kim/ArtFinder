@@ -1,0 +1,121 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+
+}
+
+.layout-header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    box-shadow:0 2px 5px 0 white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(250, 250, 250);
+    z-index: 1000;
+}
+.head{
+}
+.head-brand img{
+    padding: 10px 20px;
+    height: 80px;
+}
+.nav{
+    display: flex;
+}
+.nav-list{
+    /* height: 100%; */
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    flex-direction: row;
+}
+.nav-list li{
+    /* width:120px; */
+    height: 100px;
+    line-height: 100px;
+    list-style: none;
+    font-size: 25px;
+    color: rgb(109, 177, 255);
+    padding: 0px 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.nav-item:hover{
+    background-color: rgba(109, 177, 255, 0.479);
+}
+.footer{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(122, 119, 119);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-body{
+
+margin: 160px;
+}
+
+
+/*body{*/
+/*    padding: 0px;*/
+/*    margin: 0px;*/
+/*    text-decoration: none;*/
+/*    */
+/*}*/
+
+/*.layout-header{*/
+/*    position: fixed;*/
+/*    top: 0px;*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*    background-color: rgb(250, 250, 250);*/
+/*    z-index: 1000;*/
+/*}*/
+/*.head{*/
+/*}*/
+/*.head-brand img{*/
+/*    padding: 10px 20px;*/
+/*    height: 80px;*/
+/*}*/
+/*.nav{*/
+/*    display: flex;*/
+/*}*/
+/*.nav-list{*/
+/*    !* height: 100%; *!*/
+/*    display: flex;*/
+/*    padding: 0px;*/
+/*    margin: 0px;*/
+/*    flex-direction: row;*/
+/*}*/
+/*.nav-list li{*/
+/*    !* width:120px; *!*/
+/*    height: 100px;*/
+/*    line-height: 100px;*/
+/*    list-style: none;*/
+/*    font-size: 25px;*/
+/*    color: rgb(109, 177, 255);*/
+/*    padding: 0px 30px;*/
+/*    text-align: center;*/
+/*    cursor: pointer;*/
+/*    transition: 0.3s;*/
+/*}*/
+/*.nav-item:hover{*/
+/*    background-color: rgba(109, 177, 255, 0.479);*/
+/*}*/
+/*.footer{*/
+/*    width: 100%;*/
+/*    height: 80px;*/
+/*    background-color: rgb(122, 119, 119);*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/

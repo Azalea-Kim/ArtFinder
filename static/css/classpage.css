@@ -1,0 +1,10 @@
+@media screen and (min-width: 600px){
+       .page-body{
+       margin-top:10%;
+       }
+  }
+  @media screen and (max-width: 600px){
+       .page-body{
+       margin-top:50%;
+       }
+  }

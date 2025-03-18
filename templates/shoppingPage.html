@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block js_ext %}
+    <!--显示窗口图标-->
+    <script type="text/javascript" src="../static/js/good.js"></script>
+
+    <script type="text/javascript">
+        /*若干文本框，当光标离开文本框的时候，如果文本框为空，则将文本框的背景颜色设置为红色。
+         * 如果不为空则为白色。提示。焦点进入控件事件是onfocus.焦点离开控件事件是onblur
+         */
+        //1.获取文档中所有文本框
+        window.onload = function () {
+            var allInput = this.document.getElementsByTagName('textarea');
+            document.getElementById("requireDescription").style.visibility = "hidden";
+
+            for (var i = 0; i < allInput.length; i++) {
+                //2.添加onblur事件
+                allInput[i].onblur = function () {
+                    if (this.value.length == 0) {
+                        this.style.borderColor = 'red';
+                        document.getElementById("requireDescription").style.visibility = "visible";
+                        document.getElementById("requireDescription").style.color = 'red';
+
+
+                    } else {
+                        this.style.borderColor = '';
+                        document.getElementById("requireDescription").style.visibility = "hidden";
+                    }
+
+                };
+            }
+        };
+
+        <!--        textarea自动伸缩-->
+        function textareaH() {
+            let obj = $('textareaClass'),
+                len = obj.length;
+            for (let i = 0; i < len; i++) {
+                // console.log(obj[i]);
+                obj[i].style.height = 'auto';
+                obj[i].style.height = obj[i].scrollHeight + 'px';
+            }
+        }
+
+
+    </script>
+
+{% endblock %}
+
+{% block content %}
+    <head>
+    <link id="main" rel="stylesheet" href="../static/css/main.css"/>
+     <link id="good2" rel="stylesheet" href="../static/css/good2.css"/>
+            <link rel="stylesheet" href="../static/css/classpage.css" />
+
+</head>
+
+    <div class="realdetail-goods">
+        <img src="../static/pic/{{ gig.pic }}" class="realdetail-goods-img"/>
+        <div class="realdetail-goods-detail">
+            <p class="realdetail-goods-detail-title">{{ gig.title }}</p>
+            <div class="realdetail-goods-detail-label"><label> {{ gig.content }}</label></div>
+            <div class="realdetail-goods-detail-info">
+                <p>Author: {{ gig.author.username }}</p>
+                <p>Gig ID:<span class="realdetail-goods-detail-info-integral" id="gig-id"> {{ gig.id }}</span></p>
+                <p>Price: <span class="realdetail-goods-detail-info-integral">{{ gig.price }}$</span></p>
+                <!--                用户输入要求描述-->
+                <form method="post" action="{{ url_for('shopping',gig_id = gig.id) }}">
+                    <p>Requirement description:</p>
+
+                        {{ form.content }}
+
+                    {#                <textarea class="text-area" name="requirement" id="clientDescription" type="text"></textarea>#}
+                    <!--                    js控制的标签-->
+                    <br>
+                    <span class="realdetail-goods-detail-info-num"
+                          id="requireDescription" >Please enter your description.</span>
+                    </p>
+                    <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink" id="confirmId"
+                       onclick="confirmID()">Confirm</a>
+                    <button type="submit" class="realdetail-goods-detail-button">Add to cart</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

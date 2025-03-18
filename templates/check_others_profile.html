@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mohammad Sahragard">
+        <title>Responsive Profile Page</title>
+
+        <!-- import css file (style.css) -->
+        <link rel="stylesheet" href="../static/css/profile.css">
+            <link rel="stylesheet" href="../static/css/classpage.css" />
+         <link rel="stylesheet" href="../static/css/main.css">
+
+    </head>
+    <body>
+    <div class="container">
+
+        <div class="profile-card">
+            <div class="profile-header"><!-- profile header section -->
+                <div class="main-profile">
+                    <div class="profile-image" id="userPhoto">
+                            <div class="form-group row">
+                                {#                        <label for="" class="col-sm-2 col-form-label">Avatar</label>#}
+                                <div class="col-sm-10">
+                                    <img src="{{ avatar }}" width="125" height="125" id="userPhoto"/>
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="profile-names">
+                        <h1 class="username">{{ u.username }}</h1>
+
+                        <small class="page-title">UserID: {{ u.id }}</small>
+
+
+
+                            {% if u.seeEmail == 1 %}
+                                <small class="page-title">E-mail: {{ u.email }}</small>
+                            {% else %}
+                                <small class="page-title">E-mail: *****</small>
+                            {% endif %}
+
+
+
+                    </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+            <!--&lt;!&ndash;            show the gigs&ndash;&gt;-->
+            <!--            <div class="profile-body">&lt;!&ndash; profile body section &ndash;&gt;-->
+            <!--                <div class="profile-actions">-->
+            <!--  这是正在进行的订单-->
+
+            <h3 class="value">{{ u.username }}'s Gigs</h3>
+
+
+            <div class="display-orders" id="display-orders">
+                <!--     开始一个gig-->
+                {% for gig in gigs %}
+                <div class="display-item" id="display-item" >
+                    <div class="display-item-img">
+                        <img src="../static/pic/{{ gig.pic }}" alt="">
+                    </div>
+                    <div class="display-item-detial">
+                    <div class="detial-title">
+                        {{ gig.title }} ID:{{ gig.id }}
+                    </div>
+                    <div class="detial-content">
+                        {{ gig.content }}
+                    </div>
+                    <div class="detial-price">
+                        ${{ gig.price }}
+                    </div>
+                    <div class="detial-point">
+                        <a href="{{ url_for('gig_page_single', gig_id = gig.id) }}" target="_blank" class="media"
+                           title="" rel=""> click to buy >></a>
+                    </div>
+                    </div>
+                </div>
+
+
+                {% endfor %}
+<!--                    结束一个-->
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+    </html>
+{% endblock %}
+
+
+
