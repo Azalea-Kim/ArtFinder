@@ -1,0 +1,25 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="py-cpuinfo" />
+            <item index="1" class="java.lang.String" itemvalue="imageio" />
+            <item index="2" class="java.lang.String" itemvalue="pulse2percept" />
+            <item index="3" class="java.lang.String" itemvalue="b513c72d-8b77-4bee-96b6-b5f57977a3eb" />
+            <item index="4" class="java.lang.String" itemvalue="3f0286ca-92d7-4366-b510-d3146251d825" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E114" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

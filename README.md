@@ -21,8 +21,7 @@ This is a site designed for artists and buyers who want to request work, users c
 
 Example of the pages:
 
-![](C:/Users/Think/Downloads/af1.jpg)
+![img.png](img.png)
 
-![](C:/Users/Think/Downloads/AF2.jpg)
-
-![](C:/Users/Think/Downloads/AF3.jpg)
+![img_1.png](img_1.png)!
+![img_2.png](img_2.png)
