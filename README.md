@@ -18,3 +18,11 @@ This is a site designed for artists and buyers who want to request work, users c
 10. [The main page adjusts the light theme]()
 11. [Mobile phone tablet adaptation]()
 12. [Database emptying function]()
+
+Example of the pages:
+
+![](C:/Users/Think/Downloads/af1.jpg)
+
+![](C:/Users/Think/Downloads/AF2.jpg)
+
+![](C:/Users/Think/Downloads/AF3.jpg)
